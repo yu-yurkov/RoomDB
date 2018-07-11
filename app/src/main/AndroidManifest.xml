@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CreateUser"/>
+        <activity android:name=".AddShop"/>
     </application>
 
 </manifest>
