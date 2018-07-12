@@ -1,6 +1,6 @@
 package com.example.hp.roomdb;
 
-public class ShopAddress {
+public class Shop {
 
     private int id;
     private String address;
@@ -9,7 +9,7 @@ public class ShopAddress {
     private String contact_name;
     private String worktime;
 
-    public ShopAddress(String address, String title, String tel, String contact_name, String worktime) {
+    public Shop(String address, String title, String tel, String contact_name, String worktime) {
         this.address = address;
         this.title = title;
         this.tel = tel;

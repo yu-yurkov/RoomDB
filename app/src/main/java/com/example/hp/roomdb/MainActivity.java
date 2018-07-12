@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    ArrayList<String> shops;
+    ArrayList<Shop> shops;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         shops = new ArrayList<>();
 
         for (int i = 0; i < 10 ; i++) {
-            shops.add("Магазин: " + i);
+            Shop shop = new Shop("addr "+i,"title","tel","name","time");
+            shops.add(shop);
         }
 
         recyclerView = findViewById(R.id.recycler_view);

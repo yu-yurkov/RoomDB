@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 public class AddShopAdapter extends RecyclerView.Adapter<AddShopAdapter.ViewHolder> {
 
-    ArrayList<String> shops;
+    ArrayList<Shop> shops;
 
-    public AddShopAdapter(ArrayList<String> shops) {
+    public AddShopAdapter(ArrayList<Shop> shops) {
         this.shops = shops;
     }
 
@@ -27,7 +27,7 @@ public class AddShopAdapter extends RecyclerView.Adapter<AddShopAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull AddShopAdapter.ViewHolder holder, int position) {
-        holder.shop_title.setText(shops.get(position));
+        holder.shop_title.setText(shops.get(position).getTitle());
     }
 
     @Override
