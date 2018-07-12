@@ -27,7 +27,11 @@ public class AddShopAdapter extends RecyclerView.Adapter<AddShopAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull AddShopAdapter.ViewHolder holder, int position) {
+        holder.shop_address.setText(shops.get(position).getAddress());
         holder.shop_title.setText(shops.get(position).getTitle());
+        holder.shop_tel.setText(shops.get(position).getTel());
+        holder.shop_contact_name.setText(shops.get(position).getContact_name());
+        holder.shop_worktime.setText(shops.get(position).getWorktime());
     }
 
     @Override
@@ -39,11 +43,19 @@ public class AddShopAdapter extends RecyclerView.Adapter<AddShopAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView shop_title;
+        public TextView shop_address;
+        public TextView shop_tel;
+        public TextView shop_contact_name;
+        public TextView shop_worktime;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
+            shop_address = itemView.findViewById(R.id.shop_address);
             shop_title = itemView.findViewById(R.id.shop_title);
+            shop_tel = itemView.findViewById(R.id.shop_tel);
+            shop_contact_name= itemView.findViewById(R.id.shop_contact_name);
+            shop_worktime= itemView.findViewById(R.id.shop_worktime);
         }
     }
 }
