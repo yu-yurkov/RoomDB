@@ -8,12 +8,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AddShopAdapter extends RecyclerView.Adapter<AddShopAdapter.ViewHolder> {
 
-    ArrayList<Shop> shops;
+    List<Shop> shops;
 
-    public AddShopAdapter(ArrayList<Shop> shops) {
+    public AddShopAdapter(List<Shop> shops) {
         this.shops = shops;
     }
 

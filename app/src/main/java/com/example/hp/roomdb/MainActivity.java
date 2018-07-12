@@ -1,5 +1,6 @@
 package com.example.hp.roomdb;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    ArrayList<Shop> shops;
+    //ArrayList<Shop> shops;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +42,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        shops = new ArrayList<>();
+        //shops = new ArrayList<>();
 
-        for (int i = 0; i < 10 ; i++) {
-            Shop shop = new Shop("addr "+i,"title","tel","name","time");
-            shops.add(shop);
-        }
+        //for (int i = 0; i < 10 ; i++) {
+        //    Shop shop = new Shop("addr "+i,"title","tel","name","time");
+        //    shops.add(shop);
+        //}
+
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "production")
+                .allowMainThreadQueries()
+                .build();
+        List<Shop> shops = db.shopDao().getAllShops();
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

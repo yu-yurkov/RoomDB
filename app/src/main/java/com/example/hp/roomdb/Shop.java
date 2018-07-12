@@ -1,12 +1,28 @@
 package com.example.hp.roomdb;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity
 public class Shop {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
+
+    @ColumnInfo(name = "address")
     private String address;
+
+    @ColumnInfo(name = "title")
     private String title;
+
+    @ColumnInfo(name="tel")
     private String tel;
+
+    @ColumnInfo(name="contact_name")
     private String contact_name;
+
+    @ColumnInfo(name="worktime")
     private String worktime;
 
     public Shop(String address, String title, String tel, String contact_name, String worktime) {
