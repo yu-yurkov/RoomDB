@@ -1,5 +1,7 @@
 package com.example.hp.roomdb;
 
+import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +45,13 @@ public class AddShop extends AppCompatActivity {
                         + "\n" + contact_name.getText().toString()
                         + "\n" + worktime.getText().toString()
                 );
+
+                AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "production")
+                        .allowMainThreadQueries()
+                        .build();
+                Shop shop = new Shop(shop_address.getText().toString(),shop_title.getText().toString(),shop_tel.getText().toString(),contact_name.getText().toString(),worktime.getText().toString());
+                db.shopDao().insertAll(shop);
+                startActivity(new Intent(AddShop.this, MainActivity.class));
             }
         });
     }
