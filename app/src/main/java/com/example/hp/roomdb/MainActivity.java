@@ -42,14 +42,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //shops = new ArrayList<>();
+//        shops = new ArrayList<>();
+//
+//        for (int i = 0; i < 10 ; i++) {
+//           Shop shop = new Shop("addr "+i,"title","tel","name","time");
+//            shops.add(shop);
+//        }
 
-        //for (int i = 0; i < 10 ; i++) {
-        //    Shop shop = new Shop("addr "+i,"title","tel","name","time");
-        //    shops.add(shop);
-        //}
-
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "production")
+        AppDatabase db = Room.databaseBuilder(this.getApplicationContext(),AppDatabase.class, "production")
                 .allowMainThreadQueries()
                 .build();
         List<Shop> shops = db.shopDao().getAllShops();

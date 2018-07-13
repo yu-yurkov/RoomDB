@@ -56,4 +56,28 @@ public class Shop {
     public String getWorktime() {
         return worktime;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public void setContact_name(String contact_name) {
+        this.contact_name = contact_name;
+    }
+
+    public void setWorktime(String worktime) {
+        this.worktime = worktime;
+    }
 }
